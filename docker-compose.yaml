@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  app:
+    image: node:16-alpine
+    container_name: reactjs-demo
+    hostname: reactjs-demo
+    environment:
+      - FAST_REFRESH=false
+    ports:
+      - 3000:3000
+    volumes:
+       - ./app:/app
+    command: sh -c "cd /app && npm install && npm start"
